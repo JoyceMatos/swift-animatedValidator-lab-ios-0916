@@ -60,7 +60,7 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func phoneEditingEnded(_ sender: AnyObject) {
         let possibleNumbers = phoneTextField.text
-        if Int(possibleNumbers!) != nil && phoneTextField.text?.characters.count == 7  {
+        if Int(possibleNumbers!) != nil && (phoneTextField.text?.characters.count)! >= 7  {
                 print("valid")
             self.phoneTextField.backgroundColor = UIColor.white
             submitCounter += 1
@@ -77,7 +77,7 @@ class ValidatorViewController: UIViewController, UITextFieldDelegate {
         }
     
     @IBAction func passwordEditingEnded(_ sender: AnyObject) {
-        if passwordTextField.text?.characters.count == 6 {
+        if (passwordTextField.text?.characters.count)! >= 6 {
             print("valid")
             self.passwordTextField.backgroundColor = UIColor.white
             submitCounter += 1
